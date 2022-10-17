@@ -295,9 +295,6 @@
                     android:textSize="14sp"
                     tools:text="20:17" />
             </LinearLayout>
-
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
