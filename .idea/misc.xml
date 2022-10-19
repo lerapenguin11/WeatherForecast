@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/bg_main_bootom_sheets_swiper.xml" value="0.185" />
+        <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/bg_main_bottom_sheets.xml" value="0.185" />
         <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/bg_menu_favorites_list.xml" value="0.203" />
         <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/bg_menu_predictions_list.xml" value="0.203" />
         <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/city_item_favorite_selector.xml" value="0.203" />
         <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/ic_10d.xml" value="0.203" />
         <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/ic_arrow_back_screen.xml" value="0.203" />
         <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/ic_launcher_background.xml" value="0.203" />
+        <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/main_bottom_sheets.xml" value="0.203" />
+        <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/drawable/main_bottom_shet_swipe.xml" value="0.185" />
         <entry key="..\:/Users/lerap/AndroidStudioProjects/WeatherForecast/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>

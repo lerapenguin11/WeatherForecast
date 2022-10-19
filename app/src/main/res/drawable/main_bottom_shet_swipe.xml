@@ -4,10 +4,9 @@
 
     <solid android:color="@color/dividerColor"/>
 
-    <corners
-        android:radius="32dp"/>
+    <corners android:radius="32dp"/>
 
-    <size android:width="50dp"
-        android:height="5dp"/>
-
+    <size
+        android:height="5dp"
+        android:width="50dp"/>
 </shape>
