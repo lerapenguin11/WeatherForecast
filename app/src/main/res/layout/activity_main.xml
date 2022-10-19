@@ -73,7 +73,7 @@
             tools:src="@mipmap/clowd3x"/>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/main_weather_condition_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_sun"
@@ -81,7 +81,7 @@
             app:layout_constraintStart_toStartOf="@+id/main_temp" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/materialTextView"
+            android:id="@+id/main_weather_condition_description"
             style="@style/MainTextViewStyleMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -90,8 +90,8 @@
             app:layout_constraintBottom_toTopOf="@+id/main_temp"
             app:layout_constraintEnd_toStartOf="@+id/main_weather_image"
             app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/main_weather_condition_icon"
+            app:layout_constraintTop_toTopOf="@+id/main_weather_condition_icon"
             tools:text="Clear sky" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -131,6 +131,7 @@
                     android:textSize="12sp" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/main_temp_min_tv"
                     style="@style/MainTextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -161,6 +162,7 @@
                     android:textSize="12sp" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/main_temp_max_tv"
                     style="@style/MainTextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -190,6 +192,7 @@
                     android:src="@drawable/ic_thermostat_24" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/main_pressure_mu_tv"
                     style="@style/AdditionalWeatherInformationStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -210,6 +213,7 @@
                     android:src="@drawable/ic_drop" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/main_humidity_mu_tv"
                     style="@style/AdditionalWeatherInformationStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -228,6 +232,7 @@
                     android:src="@drawable/ic_flag_24" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/main_wind_speed_mu_tv"
                     style="@style/AdditionalWeatherInformationStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -258,11 +263,11 @@
                     android:src="@drawable/ic_sunrise" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/main_sunrise_mu_tv"
                     style="@style/AdditionalWeatherInformationStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-
                     android:layout_marginStart="8dp"
                     tools:text="6:20" />
             </LinearLayout>
@@ -279,6 +284,7 @@
                     android:src="@drawable/ic_sunset" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/main_sunset_mu_tv"
                     style="@style/AdditionalWeatherInformationStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -298,7 +304,7 @@
         android:elevation="8dp"
         android:background="@drawable/main_bottom_sheets"
         app:behavior_hideable="false"
-        app:behavior_peekHideable="160dp"
+        app:behavior_peekHeight="160dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         android:layout_gravity="end">
 
@@ -324,7 +330,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:overScrollMode="never"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                tools:layout_height="80dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -339,7 +346,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:overScrollMode="never"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                tools:layout_height="16dp"/>
         </LinearLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
