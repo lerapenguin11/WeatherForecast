@@ -48,4 +48,8 @@ dependencies {
 
     //view
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // ButterKnife
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.3'
 }
