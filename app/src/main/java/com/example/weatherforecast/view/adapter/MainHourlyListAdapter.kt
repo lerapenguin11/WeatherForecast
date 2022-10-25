@@ -10,7 +10,7 @@ import com.example.weatherforecast.R
 import com.example.weatherforecast.business.model.HourlyWeatherModel
 import com.google.android.material.textview.MaterialTextView
 
-class MainHourlyListAdapter : BaseAdapter<HourlyWeatherModel> {
+class MainHourlyListAdapter : BaseAdapter<HourlyWeatherModel>() {
 
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : HourlyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_main_hourly, parent, false)
@@ -37,7 +37,10 @@ class MainHourlyListAdapter : BaseAdapter<HourlyWeatherModel> {
         }
 
         override fun bindView(position: Int) {
-            TODO("Not yet implemented")
+            time.text = "18:00"
+            temperature.text = "16\u00B0"
+            popBate.text = "14 %"
+            icon.setImageResource(R.drawable.ic_sun)
         }
 
     }
