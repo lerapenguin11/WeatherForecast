@@ -1,33 +1,44 @@
 package com.example.weatherforecast.view.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import android.widget.ImageView
+import butterknife.BindView
+import butterknife.ButterKnife
 import com.example.weatherforecast.R
+import com.example.weatherforecast.business.model.HourlyWeatherModel
+import com.google.android.material.textview.MaterialTextView
 
-const val TAG = "RV-TEST"
-class MainHourlyListAdapter : RecyclerView.Adapter<MainHourlyListAdapter.HourlyViewHolder>() {
+class MainHourlyListAdapter : BaseAdapter<HourlyWeatherModel> {
 
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : HourlyViewHolder {
-        Log.d(TAG, "-----------onCreateViewHolder: ")
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_main_hourly, parent, false)
 
         return HourlyViewHolder(view)
     }
 
-    override fun onBindViewHolder(holderHourly: MainHourlyListAdapter.HourlyViewHolder, position: Int) {
-        Log.d(TAG, "onCreateViewHolder: ")
-    }
+    inner class HourlyViewHolder(view : View) : BaseViewHolder(view) {
 
-    override fun getItemCount() : Int {
-        return 30
-    }
+        @BindView(R.id.item_hourly_time_tv)
+        lateinit var time : MaterialTextView
 
-    inner class HourlyViewHolder(view : View) : RecyclerView.ViewHolder(view) {
+        @BindView(R.id.item_hourly_temp_tv)
+        lateinit var temperature : MaterialTextView
+
+        @BindView(R.id.item_hourly_pop_tv)
+        lateinit var popBate : MaterialTextView
+
+        @BindView(R.id.item_hourly_weather_condition_icon)
+        lateinit var icon : ImageView
+
         init {
-            Log.d(TAG, "HourlyViewHolder: ")
+            ButterKnife.bind(this, itemView)
         }
+
+        override fun bindView(position: Int) {
+            TODO("Not yet implemented")
+        }
+
     }
 }
