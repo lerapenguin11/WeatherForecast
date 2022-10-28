@@ -1,5 +1,6 @@
 package com.example.weatherforecast.view.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ class MainHourlyListAdapter : BaseAdapter<HourlyWeatherModel>() {
         return HourlyViewHolder(view)
     }
 
+    @SuppressLint("NonConstantResourceId")
     inner class HourlyViewHolder(view : View) : BaseViewHolder(view) {
 
         @BindView(R.id.item_hourly_time_tv)

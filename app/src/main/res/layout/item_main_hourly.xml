@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="17sp"
-            android:text="20:00"/>
+            tools:text="20:00"/>
 
         <com.google.android.material.textview.MaterialTextView
             style="@style/MainTextViewStyle"
@@ -28,7 +28,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="8dp"
             android:includeFontPadding="false"
-            android:text="20\u00B0"
+            tools:text="20\u00B0"
             android:layout_gravity="center_horizontal"/>
 
         <LinearLayout
@@ -53,7 +53,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_gravity="center"
                 android:textSize="12sp"
-                android:text="25 %"/>
+                tools:text="25 %"/>
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
