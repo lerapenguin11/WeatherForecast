@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
+import butterknife.ButterKnife
 import com.example.weatherforecast.R
 import com.example.weatherforecast.business.model.DailyWeatherModel
 import com.google.android.material.textview.MaterialTextView
@@ -37,6 +38,10 @@ class MainDailyListAdapter : BaseAdapter<DailyWeatherModel>() {
 
         @BindView(R.id.item_daily_min_temp_tv)
         lateinit var dailyMinTemp : MaterialTextView
+
+        init {
+            ButterKnife.bind(this, itemView)
+        }
 
         override fun bindView(position: Int) {
             dailyTimeData.text = "20 Saturday"
