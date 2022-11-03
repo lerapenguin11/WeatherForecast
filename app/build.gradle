@@ -15,6 +15,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //buildConfigField "String", "SERVER_URL", '"https://condomcom-server.herokuapp.com/api/"'
     }
 
     buildTypes {
@@ -63,5 +65,8 @@ dependencies {
     implementation "com.github.moxy-community:moxy-material:2.2.2"
     implementation "com.github.moxy-community:moxy-ktx:2.2.2"
 
-
+    // Retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
 }
