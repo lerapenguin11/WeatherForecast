@@ -16,7 +16,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        //buildConfigField "String", "SERVER_URL", '"https://condomcom-server.herokuapp.com/api/"'
+        buildConfigField "String", "SERVER_URL", '"https://api.openweathermap.org/"'
     }
 
     buildTypes {
