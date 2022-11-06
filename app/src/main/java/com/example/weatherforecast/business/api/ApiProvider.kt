@@ -16,4 +16,6 @@ class ApiProvider {
 
     fun providerWeatherApi() : WeatherApi = openWeatherMap.create(WeatherApi :: class.java)
 
+    fun provideGeoCodeApi() : GeoCodingApi = openWeatherMap.create(GeoCodingApi :: class.java)
+
 }
