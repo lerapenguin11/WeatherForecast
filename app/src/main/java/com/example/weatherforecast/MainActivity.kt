@@ -1,17 +1,13 @@
 package com.example.weatherforecast
 
-import android.Manifest
 import android.annotation.SuppressLint
-import android.content.pm.PackageManager
 import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weatherforecast.business.model.DailyWeatherModel
 import com.example.weatherforecast.business.model.HourlyWeatherModel
-import com.example.weatherforecast.business.model.MainPresenter
+import com.example.weatherforecast.presenters.MainPresenter
 import com.example.weatherforecast.business.model.WeatherData
 import com.example.weatherforecast.databinding.ActivityMainBinding
 import com.example.weatherforecast.view.MainView
@@ -21,7 +17,6 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
 
@@ -108,7 +103,7 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     override fun displayLocation(data: String) {
         binding.mainCityNameTv.text = data
     }
-
+    //TODO применить данные из интернета
     override fun displayCurrentData(data: WeatherData) {
         binding.mainCityNameTv.text = "Moscow"
         binding.mainDateTv.text = "14 октября"
