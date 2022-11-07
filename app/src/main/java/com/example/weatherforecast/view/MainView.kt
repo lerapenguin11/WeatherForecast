@@ -2,7 +2,7 @@ package com.example.weatherforecast.view
 
 import com.example.weatherforecast.business.model.DailyWeatherModel
 import com.example.weatherforecast.business.model.HourlyWeatherModel
-import com.example.weatherforecast.business.model.WeatherData
+import com.example.weatherforecast.business.model.WeatherDataModel
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
 
@@ -12,7 +12,7 @@ interface MainView : MvpView{
     fun displayLocation(data : String)
 
     @AddToEndSingle
-    fun displayCurrentData(data : WeatherData)
+    fun displayCurrentData(data: WeatherDataModel)
 
     @AddToEndSingle
     fun displayHourlyData(data : List<HourlyWeatherModel>)

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weatherforecast.business.model.DailyWeatherModel
 import com.example.weatherforecast.business.model.HourlyWeatherModel
 import com.example.weatherforecast.presenters.MainPresenter
-import com.example.weatherforecast.business.model.WeatherData
+import com.example.weatherforecast.business.model.WeatherDataModel
 import com.example.weatherforecast.databinding.ActivityMainBinding
 import com.example.weatherforecast.view.MainView
 import com.example.weatherforecast.view.adapter.MainDailyListAdapter
@@ -104,7 +104,7 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         binding.mainCityNameTv.text = data
     }
     //TODO применить данные из интернета
-    override fun displayCurrentData(data: WeatherData) {
+    override fun displayCurrentData(data: WeatherDataModel) {
         binding.mainCityNameTv.text = "Moscow"
         binding.mainDateTv.text = "14 октября"
         binding.mainWeatherConditionDescription.text = "Clear sky"
