@@ -44,11 +44,13 @@ class MainDailyListAdapter : BaseAdapter<DailyWeatherModel>() {
         }
 
         override fun bindView(position: Int) {
-            dailyTimeData.text = "20 Saturday"
-            icon.setImageResource(R.drawable.ic_sun)
-            dailyPop.text = "25 %"
-            dailyMaxTemp.text = "26\u00B0"
-            dailyMinTemp.text = "19\u00B0"
+            mData[position].apply {
+                dailyTimeData.text = "20 Saturday"
+                icon.setImageResource(R.drawable.ic_sun)
+                dailyPop.text = "25 %"
+                dailyMaxTemp.text = "26\u00B0"
+                dailyMinTemp.text = "19\u00B0"
+            }
         }
 
     }

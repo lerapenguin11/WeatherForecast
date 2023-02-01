@@ -39,10 +39,12 @@ class MainHourlyListAdapter : BaseAdapter<HourlyWeatherModel>() {
         }
 
         override fun bindView(position: Int) {
-            time.text = "18:00"
-            temperature.text = "16\u00B0"
-            popBate.text = "14 %"
-            icon.setImageResource(R.drawable.ic_sun)
+            mData[position].apply {
+                time.text = "18:00"
+                temperature.text = "16\u00B0"
+                popBate.text = "14 %"
+                icon.setImageResource(R.drawable.ic_sun)
+            }
         }
 
     }

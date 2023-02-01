@@ -10,7 +10,7 @@ import com.example.weatherforecast.business.model.HourlyWeatherModel
 import com.example.weatherforecast.presenters.MainPresenter
 import com.example.weatherforecast.business.model.WeatherDataModel
 import com.example.weatherforecast.databinding.ActivityMainBinding
-import com.example.weatherforecast.view.MainView
+import com.example.weatherforecast.view.*
 import com.example.weatherforecast.view.adapter.MainDailyListAdapter
 import com.example.weatherforecast.view.adapter.MainHourlyListAdapter
 import com.google.android.gms.location.LocationCallback
@@ -105,7 +105,24 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     }
     //TODO применить данные из интернета
     override fun displayCurrentData(data: WeatherDataModel) {
-        binding.mainCityNameTv.text = "Moscow"
+        data.apply {
+            binding.mainCityNameTv.text = "Moscow"
+            binding.mainDateTv.text = current.dt.toDateFormatOf(DAY_FULL_MONTH_NAME)
+            binding.mainWeatherConditionDescription.text = "Clear sky"
+            binding.mainTemp.text = current.temp.toDegree()
+            daily[0].temp.apply {
+                binding.mainTempMinTv.text = min.toDegree()
+                binding.mainTempMaxTv.text = max.toDegree()
+            }
+            binding.mainPressureMuTv.text = StringBuilder().append(current.pressure.toString()).append(" hPa")
+            binding.mainHumidityMuTv.text = StringBuilder().append(current.humidity.toString()).append(" %")
+            binding.mainWindSpeedMuTv.text = StringBuilder().append(current.wind_speed.toString()).append(" m/s")
+            binding.mainSunriseMuTv.text = current.sunrise.toDateFormatOf(HOUR_DOUBLE_DOT_MINUTE)
+            binding.mainSunsetMuTv.text = current.sunset.toDateFormatOf(HOUR_DOUBLE_DOT_MINUTE)
+            binding.mainWeatherConditionIcon.setImageResource(current.weather[0].icon.provideIcon())
+            binding.mainWeatherImage.setImageResource(R.mipmap.clowd3x)
+        }
+        /*binding.mainCityNameTv.text = "Moscow"
         binding.mainDateTv.text = "14 октября"
         binding.mainWeatherConditionDescription.text = "Clear sky"
         binding.mainTemp.text = "25\u00B0"
@@ -117,7 +134,7 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         binding.mainSunriseMuTv.text = "6:20"
         binding.mainSunsetMuTv.text = "22:50"
         binding.mainWeatherConditionIcon.setImageResource(R.drawable.ic_sun)
-        binding.mainWeatherImage.setImageResource(R.mipmap.clowd3x)
+        binding.mainWeatherImage.setImageResource(R.mipmap.clowd3x)*/
     }
 
     override fun displayHourlyData(data: List<HourlyWeatherModel>) {
