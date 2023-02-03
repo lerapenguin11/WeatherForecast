@@ -2,18 +2,25 @@ package com.example.weatherforecast
 
 import android.app.Application
 import android.content.Intent
+import androidx.room.Room
+import com.example.weatherforecast.business.room.OpenWeatherDatabase
 
 const val APP_SETTINGS = "App settings"
 const val IS_STARTED_UP = "Is started up"
 
 class App : Application() {
-
-    //TODO переменная БД
+    companion object{
+        lateinit var db : OpenWeatherDatabase
+    }
 
     override fun onCreate() {
         super.onCreate()
 
-        //TODO инициализация БД
+        //TODO fallbackToDestructiveMigration() убрать
+        //fallbackToDestructiveMigration() чтобы не настраивать миграцию
+        db = Room.databaseBuilder(this, OpenWeatherDatabase :: class.java, "OpenWeatherDB")
+            .fallbackToDestructiveMigration()
+            .build()
 
         val preferences = getSharedPreferences(APP_SETTINGS, MODE_PRIVATE)
 
