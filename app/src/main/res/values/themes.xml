@@ -48,4 +48,11 @@
         <item name="android:layout_height">30dp</item>
         <item name="android:layout_width">30dp</item>
     </style>
+    <style name="Theme.WeatherForecast.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.WeatherForecast.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.WeatherForecast.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
