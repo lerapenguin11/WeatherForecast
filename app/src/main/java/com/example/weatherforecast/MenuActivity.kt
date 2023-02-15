@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.business.model.GeoCodeModel
 import com.example.weatherforecast.presenters.MenuPresenter
+import com.example.weatherforecast.view.adapter.CityListAdapter
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
@@ -24,28 +25,12 @@ class MenuActivity : MvpAppCompatActivity(), MenuView {
 
         presenter.enable()
         presenter.getFavoriteList()
-
-        initCitiList(predictions)
-        initCitiList(favorites)
-
-        search_field.createObservable()
-            .doOnNext { setLoading(true) }
-            .debounce (700, TimeUnit.MILLISECONDS)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe{
-                if (!it.isNullOrEmpty())  presenter.searchFor(it)
-            }
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        overridePendingTransition(android.R.anim.fade_in, R.anim.slide_out_left)
     }
 
     //-------------------------------- ^ menuActivity ^ -------------------------------
 
     //--------------------------------moxy-------------------------------
-    override fun setLoading(flag: Boolean) {
+  /*  override fun setLoading(flag: Boolean) {
         loading.isActivated = flag
         loading.visibility = if(flag) View.VISIBLE else View.GONE
     }
@@ -57,7 +42,7 @@ class MenuActivity : MvpAppCompatActivity(), MenuView {
     override fun fillFavoriteList(data: List<GeoCodeModel>) {
         (favorites.adapter as CityListAdapter).updateData(data)
     }
-
+*/
     //--------------------------------moxy-------------------------------
 
     private fun initCitiList(rv: RecyclerView){
@@ -89,9 +74,7 @@ class MenuActivity : MvpAppCompatActivity(), MenuView {
             val bundle = Bundle()
             bundle.putString("lat",item.lat.toString())
             bundle.putString("lon",item.lon.toString())
-            intent.putExtra(COORDINATES,bundle)
             startActivity(intent)
-            overridePendingTransition(android.R.anim.fade_in, R.anim.slide_out_left)
         }
 
     }
